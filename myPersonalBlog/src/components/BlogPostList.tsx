@@ -50,7 +50,6 @@ function BlogPostsList() {
 
     return (
         <div>
-            <h2>Blogginlägg</h2>
             {/* Meddelande som visas vid laddning av att hämta in alla blogginlägg */}
             {
                 loading && <p>Hämtar blogginlägg...</p>
