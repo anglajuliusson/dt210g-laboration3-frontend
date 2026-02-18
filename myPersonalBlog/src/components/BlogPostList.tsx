@@ -52,7 +52,7 @@ function BlogPostsList() {
         <div>
             {/* Meddelande som visas vid laddning av att hämta in alla blogginlägg */}
             {
-                loading && <p>Hämtar blogginlägg...</p>
+                loading && <p style={{textAlign: "center", fontSize: "20px", margin: "2em"}}>Hämtar blogginlägg...</p>
             }
             {/* Lista som innehåller alla blogginlägg */}
             <ul>
