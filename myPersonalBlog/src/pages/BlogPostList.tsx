@@ -25,7 +25,7 @@ function BlogPostsList() {
         try {
             setLoading(true);
 
-            await delay(2000);
+            await delay(1000);
 
             // Skickar GET-request till backend
             const resp = await fetch("http://localhost:3000/blog-posts");
