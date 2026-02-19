@@ -3,6 +3,8 @@ import BlogPostPage from "./pages/BlogPostPage";
 import BlogPostsList from "./pages/BlogPostList";
 import Layout from "./components/Layout";
 import LoginPage from "./pages/LoginPage";
+import ProtectedRoute from "./components/ProtectedRoutes";
+import AdminPage from "./pages/AdminPage";
 
 const router = createBrowserRouter([
     {
@@ -20,7 +22,15 @@ const router = createBrowserRouter([
             {
                 path: "/login",
                 element: <LoginPage />
-            }
+            },
+            {
+                path: "/admin",
+                element: (
+                  <ProtectedRoute>
+                    <AdminPage />
+                  </ProtectedRoute>
+                )
+              }
         ]
     }
 ])
