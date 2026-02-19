@@ -1,8 +1,6 @@
 import { useEffect, useState } from "react";
 import BlogPost from "./BlogPost";
 import type { BlogPostsInterface } from "../interfaces/BlogPostsInterface";
-import Header from "../components/Header"; // Importera header-komponent
-import Footer from "../components/Footer"; // Importera footer-komponent
 
 function BlogPostsList() {
     // State för blogginlägg
@@ -52,7 +50,6 @@ function BlogPostsList() {
 
     return (
         <div>
-            <Header />
             {/* Meddelande som visas vid laddning av att hämta in alla blogginlägg */}
             {
                 loading && <p style={{textAlign: "center", fontSize: "20px", margin: "2em"}}>Hämtar blogginlägg...</p>
@@ -66,7 +63,6 @@ function BlogPostsList() {
                     ))
                 }
             </ul>
-            <Footer />
         </div>
     )
 }
