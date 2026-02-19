@@ -234,7 +234,7 @@ function AdminPage() {
                 <input style={inputStyle} value={title} onChange={(e) => setTitle(e.target.value)} placeholder="Titel" required />
                 <textarea style={inputStyle} value={description} onChange={(e) => setDescription(e.target.value)} placeholder="Text" required rows={5} />
                 <input style={inputStyle} value={image} onChange={(e) => setImage(e.target.value)} placeholder="Bild-URL (valfritt)" />
-                <input style={inputStyle} value={date} onChange={(e) => setDate(e.target.value)} placeholder="Datum (yyyy-mm-dd)"></input>
+                <input style={inputStyle} value={date} onChange={(e) => setDate(e.target.value)} type="date"></input>
                 <button type="submit" style={buttonStyle}>Skapa</button>
             </form>
 
@@ -248,7 +248,7 @@ function AdminPage() {
                         <input style={inputStyle} value={editTitle} onChange={(e) => setEditTitle(e.target.value)} />
                         <textarea style={inputStyle} value={editDescription} onChange={(e) => setEditDescription(e.target.value)} rows={5} />
                         <input style={inputStyle} value={editImage} onChange={(e) => setEditImage(e.target.value)} placeholder="Bild-URL (valfritt)" />
-                        <input style={inputStyle} value={editDate} onChange={(e) => setEditDate(e.target.value)}></input>
+                        <input style={inputStyle} value={editDate} onChange={(e) => setEditDate(e.target.value)} type="date"></input>
 
                         <div style={{ display: "flex", gap: 8, marginTop: 8 }}>
                         <button style={pinkButtonStyle} onClick={() => saveEdit(p.id)}>Spara</button>
