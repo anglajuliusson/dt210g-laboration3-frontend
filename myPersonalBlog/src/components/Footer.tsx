@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 // Inline-styling för footer
 const footerStyling = {
@@ -18,8 +18,24 @@ const taskStyling = {
 const LinkStyle = {
     color: "rgb(56, 56, 56)",
 }
+const buttonStyle = {
+    backgroundColor: "rgb(255, 111, 132)",
+    border: "none",
+    borderRadius: "5px",
+    padding: "0.7em 1.5em",
+    cursor: "pointer",
+    marginLeft: "1em"
+}
 
 function Footer() {
+    const token = localStorage.getItem("token");
+    const navigate = useNavigate();
+
+    const handleLogout = () => {
+        localStorage.removeItem("token");
+        navigate("/blog-posts");
+    };
+
     return (
         <footer>
             <div style={footerStyling}>
@@ -29,7 +45,18 @@ function Footer() {
                     <p style={{fontSize: "15px"}}>anju2402@student.miun.se</p>
                 </div>
                 <div style={{marginLeft: "auto"}}>
-                    <Link to="/login" style={LinkStyle}>Logga in</Link>
+
+                {/* Olika innehåll beroende på inloggad eller inte */}
+                {!token ? (
+                        // Om ej inloggad visas denna
+                        <Link to="/login" style={LinkStyle}>Logga in</Link>
+                    ) : (
+                        <> 
+                        {/* Om inloggad visas denna */}
+                            <Link to="/admin" style={LinkStyle}>Redigera inlägg</Link>
+                            <button onClick={handleLogout} style={buttonStyle}>Logga ut</button>
+                        </>
+                    )}
                 </div>
             </div>
             <div style={taskStyling}>
