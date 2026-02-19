@@ -21,7 +21,7 @@ const BlogPostStyle = {
 function BlogPost({blogPostProp} : {blogPostProp: BlogPostsInterface}) {
     return (
         <li style={BlogPostStyle}>
-            <Link style={LinkStyle} to="/blog-post">
+            <Link style={LinkStyle} to={`/blog-posts/${blogPostProp.id}`}>
                 <img style={{ maxWidth: "400px", borderRadius: "5px"}} src={blogPostProp.image}></img> {/* Visar bild för blogginlägg */}
                 <div className="BlogPostText">
                     <h2 style={{marginBottom: "1em", fontSize: "28px", color: "rgb(255, 111, 132)"}}>{blogPostProp.title}</h2> {/* Visar titel för blogginlägg */}
