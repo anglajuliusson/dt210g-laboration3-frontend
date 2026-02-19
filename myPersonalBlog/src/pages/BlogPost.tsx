@@ -1,4 +1,5 @@
 import type { BlogPostsInterface } from "../interfaces/BlogPostsInterface";
+import { Link } from "react-router-dom";
 
 const LinkStyle = {
     textDecoration: "none",
@@ -20,14 +21,14 @@ const BlogPostStyle = {
 function BlogPost({blogPostProp} : {blogPostProp: BlogPostsInterface}) {
     return (
         <li style={BlogPostStyle}>
-            <a style={LinkStyle} href={`/blog-posts/${blogPostProp.id}`}>
+            <Link style={LinkStyle} to="/blog-post">
                 <img style={{ maxWidth: "400px", borderRadius: "5px"}} src={blogPostProp.image}></img> {/* Visar bild för blogginlägg */}
                 <div className="BlogPostText">
                     <h2 style={{marginBottom: "1em", fontSize: "28px", color: "rgb(255, 111, 132)"}}>{blogPostProp.title}</h2> {/* Visar titel för blogginlägg */}
                     <p style={{marginBottom: "1em", maxWidth: "500px"}}>{blogPostProp.description}</p> {/* Visar texten för ett blogginlägg*/}
                     <p>Publicerat: {blogPostProp.date?.slice(0, 10)}</p> {/* Visar datumet för blogginlägget, utskrivet som yyyy-mm-dd */}
                 </div>
-            </a>
+            </Link>
         </li>
     )
 }
