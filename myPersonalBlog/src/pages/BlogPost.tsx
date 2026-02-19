@@ -1,5 +1,6 @@
 import type { BlogPostsInterface } from "../interfaces/BlogPostsInterface";
 import { Link } from "react-router-dom";
+import '../index.css'; // Inkludera css-fil
 
 const LinkStyle = {
     textDecoration: "none",
@@ -20,10 +21,10 @@ const BlogPostStyle = {
 
 function BlogPost({blogPostProp} : {blogPostProp: BlogPostsInterface}) {
     return (
-        <li style={BlogPostStyle}>
-            <Link style={LinkStyle} to={`/blog-posts/${blogPostProp.id}`}>
-                <img style={{ maxWidth: "400px", borderRadius: "5px"}} src={blogPostProp.image}></img> {/* Visar bild för blogginlägg */}
-                <div className="BlogPostText">
+        <li className="bp" style={BlogPostStyle}>
+            <Link className="bp_link" style={LinkStyle} to={`/blog-posts/${blogPostProp.id}`}>
+                <img className="bp_img" style={{ maxWidth: "400px", borderRadius: "5px"}} src={blogPostProp.image}></img> {/* Visar bild för blogginlägg */}
+                <div className="bp_text BlogPostText">
                     <h2 style={{marginBottom: "1em", fontSize: "28px", color: "rgb(255, 111, 132)"}}>{blogPostProp.title}</h2> {/* Visar titel för blogginlägg */}
                     <p style={{marginBottom: "1em", maxWidth: "500px"}}>{blogPostProp.description}</p> {/* Visar texten för ett blogginlägg*/}
                     <p>Publicerat: {blogPostProp.date?.slice(0, 10)}</p> {/* Visar datumet för blogginlägget, utskrivet som yyyy-mm-dd */}

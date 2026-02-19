@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import type { BlogPostsInterface } from "../interfaces/BlogPostsInterface";
+import '../index.css'; // Inkludera css-fil
 
 const LinkStyle = {
     color: "rgb(56, 56, 56)",
@@ -59,20 +60,14 @@ function BlogPostPage() {
   return (
     <div>
       <Link to="/blog-posts" style={LinkStyle}>Tillbaka</Link>
-      <div style={BlogPostStyle}>
+      <div className="bp" style={BlogPostStyle}>
         {blogPost.image ? (
-            <img style={{ maxWidth: "400px", borderRadius: "5px" }} src={blogPost.image} alt={blogPost.title} />
+            <img className="bp_img" style={{ maxWidth: "400px", borderRadius: "5px" }} src={blogPost.image} alt={blogPost.title} />
         ) : null}
 
-        <div className="BlogPostText">
-            <h2 style={{ marginBottom: "1em", fontSize: "28px", color: "rgb(255, 111, 132)" }}>
-            {blogPost.title}
-            </h2>
-
-            <p style={{ marginBottom: "1em", maxWidth: "500px" }}>
-            {blogPost.description}
-            </p>
-
+        <div className="bp_text BlogPostText">
+            <h2 style={{ marginBottom: "1em", fontSize: "28px", color: "rgb(255, 111, 132)" }}>{blogPost.title}</h2>
+            <p style={{ marginBottom: "1em", maxWidth: "500px" }}>{blogPost.description}</p>
             <p>Publicerat: {blogPost.date?.slice(0, 10)}</p>
         </div>
       </div>

@@ -19,3 +19,49 @@ html, body {
 .layout main {
   flex: 1;
 }
+/* Responsiv BlogPost-kort */
+.bp_link, .bp {
+  flex-wrap: wrap;
+  align-items: flex-start;
+}
+.bp_text {
+  min-width: 260px;
+}
+/* Tablet/mobil: stapla och gör kortet fullbrett */
+@media (max-width: 900px) {
+  .bp {
+    width: 100% !important;
+    max-width: 900px;
+    box-sizing: border-box;
+    padding: 1.25em !important;
+    margin: 1.25em auto 3em auto !important;
+  }
+  .bp_link, .bp {
+    flex-direction: column !important;
+    gap: 1.25em !important;
+    flex-wrap: nowrap !important;
+  }
+  .bp_img {
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto;
+    display: block;
+  }
+  .bp_text {
+    min-width: 0;
+    max-width: 100% !important;
+  }
+  .bp_text p {
+    max-width: 100% !important;
+  }
+}
+/* Extra små mobiler */
+@media (max-width: 420px) {
+  .bp {
+    padding: 1em !important;
+    border-radius: 8px;
+  }
+  .bp_text h2 {
+    font-size: 22px !important;
+  }
+}
