@@ -54,6 +54,10 @@ html, body {
   .bp_text p {
     max-width: 100% !important;
   }
+  /* Responsivt login-formulär*/
+  .login_form {
+    width: 90%;
+  }
 }
 /* Extra små mobiler */
 @media (max-width: 420px) {
@@ -63,5 +67,9 @@ html, body {
   }
   .bp_text h2 {
     font-size: 22px !important;
+  }
+  /* Responsivt login-formulär*/
+  .login_form {
+    width: 90%;
   }
 }
